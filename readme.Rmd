@@ -1,0 +1,39 @@
+---
+title: "Social Capital Analysis - Work in Progress"
+output: html_document
+---
+
+# Background
+This is an analysis project - work in progress - to calculate social capital values for each nation using available data. The first part of the project is to download suitable data from different sources, merge and prepare for data analysis.
+
+
+# Download World Bank 
+The World Bank 'Changing Wealth of nations dataset is available at http://data.worldbank.org/data-catalog/wealth-of-nations and has data for natural, produced and human capital for 120 countries.
+
+```{r downloadWBdata,echo=FALSE,  warning=FALSE}
+setwd("C:/Social Capital") #set a working directory for data - this directory needs to pre-exist
+#Download file and put in working directory
+#fileurl <- "http://data.worldbank.org/sites/default/files/total_and_per_capita_wealth_of_nations.xls"
+#download.file(fileurl, 
+#              destfile="./total_and_per_capita_wealth_of_nations.xls")
+
+#convert file to dataframe
+library(readxl)
+readdata<-read_excel("total_and_per_capita_wealth_of_nations.xls",
+                             sheet = "total wealth, 2005",na = c(".."))
+WBdata_2005 <- data.frame(readdata[6:214,1:10])
+colnames(WBdata_2005) <- readdata[5,1:10]
+rownames(WBdata_2005) <- NULL
+WBdata_2005[, c(5:10)] <- sapply(WBdata_2005[, c(5:10)], as.numeric)
+
+
+```
+
+A summary of the variables in this file, is below.
+
+
+```{r viewdata,echo=FALSE}
+str(WBdata_2005)
+```
+
+
