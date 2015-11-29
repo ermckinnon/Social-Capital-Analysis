@@ -4,11 +4,16 @@ output: html_document
 ---
 
 # Background
-This is an analysis project - work in progress - to calculate social capital values for each nation using available data. The first part of the project is to download suitable data from different sources, merge and prepare for data analysis.
+This is an analysis project - work in progress - to calculate social capital values for each nation using available data. The first part of the project is to download suitable data from different sources, update, merge and prepare for data analysis.
 
 
-# Download World Bank 
-The World Bank 'Changing Wealth of nations dataset is available at http://data.worldbank.org/data-catalog/wealth-of-nations and has data for natural, produced and human capital for 120 countries.
+# Download World Bank for 2005
+The World Bank 'Changing Wealth of nations dataset is available at http://data.worldbank.org/data-catalog/wealth-of-nations and has data for natural, produced and human capital for 120 countries. 
+
+Produced capital is calculated as the sum of physical capital and urban land, which is valued at 24 percent of physical capital across all countries. Produced capital is defined as accumulation of investment series (gross capital formation) taking into account depreciation at the rate of 5 percent. 20 years is the service lifetime assumption.  
+
+Natural capital is the sum of Crop, Pasture Land, Timber, Non Timber Forest, Protected Areas, Oil, Natural Gas, Coal, and Minerals.  
+
 
 
 
